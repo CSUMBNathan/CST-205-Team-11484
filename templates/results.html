@@ -8,10 +8,13 @@
 <body>
     <h1>Results</h1>
 <p>The actual view count for "{{ video_title }}" was {{ actual_views }} views.</p>
-{% if is_close %}
+{% if is_equal %}
+    <h2>You guessed the video's views exactly! 🎉🎉🎉</h2>
+{% elseif is_close %}
     <h2>¡Buen trabajo! You were close! 🎉</h2>
 {% else %}
-    <h2>¡Ay no! Better luck next time!</h2>
+    <h2>¡Ay no! Better luck next time! 😞</h2>
 {% endif %}
+<p><br><a href="/">try a new video</a></p>
 </body>
 </html>

@@ -9,15 +9,16 @@ YOUTUBE_API_VERSION = 'v3'
 
 def get_random_video():
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=API_KEY)
-    search_query = random.choice(['fun', 'cool', 'random', 'awesome','cooking','sports'])
+    search_query = random.choice(['cool', 'random', 'awesome','cooking','sports', 'fortnite', 'music', 'computer science'])
     response = youtube.search().list(
         q=search_query,
         part='snippet',
         type='video',
-        maxResults=1
+        maxResults=50
     ).execute()
 
-    video = response['items'][0]
+    num = random.randint(0, 50)
+    video = response['items'][num]
 
     videoStats = youtube.videos().list(
         part = 'statistics',
@@ -52,12 +53,17 @@ def guess():
     user_guess = int(request.form['view_count'])
     actual_views = int(request.form['actual_views'])  # Passed from the form
 
-    # Check if the user's guess is close
-    is_close = abs(user_guess - actual_views) <= 10000  
+    # check if the guess is equal to a video's views
+    is_equal = user_guess == actual_views
+
+    # Check if the user's guess is within 10% of a video's views
+    ten_percent = actual_views//10
+    is_close = userguess >= actual_views-ten_percent or userguess <= actualviews - ten_percent 
 
     # Render results with actual views and whether the guess was close
     return render_template(
         'results.html',
+        is_equal = is_ equal,
         actual_views=actual_views,
         is_close=is_close,
         video_title=request.form['video_title'],
