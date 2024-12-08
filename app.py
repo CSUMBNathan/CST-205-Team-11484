@@ -63,7 +63,7 @@ def guess():
     # Render results with actual views and whether the guess was close
     return render_template(
         'results.html',
-        is_equal = is_ equal,
+        is_equal = is_equal,
         actual_views=actual_views,
         is_close=is_close,
         video_title=request.form['video_title'],

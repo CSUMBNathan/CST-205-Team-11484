@@ -4,17 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{bootstrap.load_css()}}
+    <style>
+        body {
+            text-align: center;
+            font-family: monospace;
+            background-color: lightblue;
+        }
+    </style>
 </head>
 <body>
     <form action="/guess" method="POST">
+        <br>
         <h2>Guess the views for: {{ video.title }}</h2>
+        <br>
         <img src="{{ video.thumbnail }}" alt="Video Thumbnail">
+        <br><br>
         <input type="number" name="view_count" placeholder="Enter your guess" required>
         <input type="hidden" name="actual_views" value="{{ video.view_count }}">
         <input type="hidden" name="video_title" value="{{ video.title }}">
         <input type="hidden" name="video_thumbnail" value="{{ video.thumbnail }}">
         <button type="submit">Submit Guess</button>
-        <p><br><a href="/">try a new video</a></p>
+
+        <p><a href="/" style="font-size: 12px;">Try a different video</a></p>
     </form>
 </body>
 </html>
