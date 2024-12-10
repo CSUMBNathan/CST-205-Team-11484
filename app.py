@@ -17,7 +17,7 @@ def get_random_video():
         maxResults=50
     ).execute()
 
-    num = random.randint(0, 50)
+    num = random.randint(0, 49)
     video = response['items'][num]
 
     videoStats = youtube.videos().list(
@@ -33,7 +33,7 @@ def get_random_video():
         'title': video['snippet']['title'],
         'thumbnail': video['snippet']['thumbnails']['high']['url'],
         'video_id': video['id']['videoId'],
-        'view_count': view_count
+        # 'view_count': view_count
     }
 
 get_random_video()
