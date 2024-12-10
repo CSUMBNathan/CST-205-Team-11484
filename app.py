@@ -33,7 +33,7 @@ def get_random_video():
         'title': video['snippet']['title'],
         'thumbnail': video['snippet']['thumbnails']['high']['url'],
         'video_id': video['id']['videoId'],
-        # 'view_count': view_count
+        'view_count': view_count
     }
 
 get_random_video()
