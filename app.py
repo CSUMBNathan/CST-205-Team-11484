@@ -58,12 +58,12 @@ def guess():
 
     # Check if the user's guess is within 10% of a video's views
     ten_percent = actual_views//10
-    is_close = userguess >= actual_views-ten_percent or userguess <= actualviews - ten_percent 
+    is_close = user_guess >= actual_views-ten_percent and user_guess <= actual_views - ten_percent 
 
     # Render results with actual views and whether the guess was close
     return render_template(
         'results.html',
-        is_equal = is_ equal,
+        is_equal = is_equal,
         actual_views=actual_views,
         is_close=is_close,
         video_title=request.form['video_title'],
