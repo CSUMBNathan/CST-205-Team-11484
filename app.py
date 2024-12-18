@@ -18,7 +18,7 @@ def get_random_video():
     ).execute()
 
     num = random.randint(0, 49)
-    video = response['items'][num]
+    video = random.choice(response['items'])
 
     videoStats = youtube.videos().list(
         part = 'statistics',
