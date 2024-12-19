@@ -1,3 +1,5 @@
+#https://github.com/CSUMBNathan/CST-205-Team-11484
+
 import random
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap5
@@ -7,6 +9,8 @@ API_KEY = 'AIzaSyCG-XNDsCYENMDhzhZsv9zArJVH-ZlYhvk'
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
+#Function made by Nathaniel Trujillo and edited by Cooper Westervelt
+#this function gets a 'random' videof using a random keyword and searching that query. 50 Results
 def get_random_video():
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=API_KEY)
     search_query = random.choice(['cool', 'random', 'awesome','cooking','sports', 'fortnite', 'music', 'computer science'])
@@ -18,8 +22,10 @@ def get_random_video():
     ).execute()
 
     num = random.randint(0, 49)
+    #Get a random video from the list.
     video = random.choice(response['items'])
 
+    #API to get the statistics based on the video chosen. Make variables to pass into routes.
     videoStats = youtube.videos().list(
         part = 'statistics',
         id = video['id']['videoId']
@@ -29,6 +35,7 @@ def get_random_video():
     print(video['snippet']['title'])
     print(view_count)
 
+
     return {
         'title': video['snippet']['title'],
         'thumbnail': video['snippet']['thumbnails']['high']['url'],
@@ -36,11 +43,12 @@ def get_random_video():
         'view_count': view_count
     }
 
-get_random_video()
+#get_random_video()
 
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
 
+#Routes made by Nathaniel Trujillo
 @app.route('/')
 def index():
     # Get random video and pass it to the template
