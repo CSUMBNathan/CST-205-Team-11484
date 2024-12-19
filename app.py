@@ -1,5 +1,5 @@
 #https://github.com/CSUMBNathan/CST-205-Team-11484
-#Authors: Nathaniel Trujillo, Joseph Ramer
+#Authors: Nathaniel Trujillo, Joseph Ramer, Cooper Westervelt
 #Date:12/18/2024
 #Abstract: This program makes a flask web application that pull a random
 #video from the youtube data API. Displays it on a flask webpage and 
