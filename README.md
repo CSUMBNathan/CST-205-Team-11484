@@ -24,5 +24,9 @@ AIzaSyCG-XNDsCYENMDhzhZsv9zArJVH-ZlYhvk
 
 To run the app just type "py app.py" in your console to open up a local host.
 
+Future Work: Add an actual link to the the video in the result page.
+Add a generate video by category function, basically choose a tag and generate
+a random video with that tag.
+
 Github: https://github.com/CSUMBNathan/CST-205-Team-11484
 Trello: https://trello.com/b/ZjnfGX4v/cst-205-team-11484-project

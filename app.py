@@ -1,4 +1,11 @@
 #https://github.com/CSUMBNathan/CST-205-Team-11484
+#Authors: Nathaniel Trujillo, Joseph Ramer
+#Abstract: This program makes a flask web application that pull a random
+#video from the youtube data API. Displays it on a flask webpage and 
+#requests user input for a guess on the number of views.
+
+
+
 
 import random
 from flask import Flask, render_template, request
