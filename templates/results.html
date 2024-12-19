@@ -1,3 +1,5 @@
+<!-- Made by Cooper Westervelt   -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +16,13 @@
     </style>
 </head>
 <body>
-    <h1>Results</h1>
+    <h1>Results</h1><!--Bootstrap to display tital and views from API   -->
+
     <p>The actual view count for "{{ video_title }}" was {{ actual_views }} views.</p>
     <br>
     <img src="{{ video_thumbnail }}" alt="Video Thumbnail">
     <br><br>
+    <!--Simple if statement to display either a correct guess or incorrect guess-->
     {% if is_equal %}
         <h2>You guessed the video's views exactly! 🎉🎉🎉</h2>
     {% elif is_close %}
